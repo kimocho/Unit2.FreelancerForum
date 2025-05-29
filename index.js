@@ -65,15 +65,15 @@ const arrayOfFreelancers = (arr) => {
 }
 // console.log(arrayOfFreelancers(state));
 
-// const avgRateOfFreelancers = () => {
-//   return avg;
-// }
+const avgRateOfFreelancers = () => {
+  return `<h4>The average rate is $${avg}.<h4>`
+}
 
 const renderFunc = () => {
   const $app = document.querySelector("#app");
   $app.innerHTML = `
     <h1>Freelancer Forum</h1>
-    <h4>The average rate is $${avg}.<h4>
+    ${avgRateOfFreelancers()}
     <table id="FreelancerRows"></table>
   `;
   $app.querySelector("#FreelancerRows").replaceWith(arrayOfFreelancers(state));
